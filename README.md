@@ -13,6 +13,6 @@ NB switching the emulation speed to "Full" no longer works properly, but everyth
 
 To run simply download and run the jar file:
 
-https://javatari.org/?ROM=https://github.com/RobinSergeant/J-ZX81/raw/master/bin/J_ZX81.jar
+https://github.com/RobinSergeant/J-ZX81/raw/master/bin/J_ZX81.jar
 
 ![Alt text](/data/zx81keyb.jpg?raw=true)
