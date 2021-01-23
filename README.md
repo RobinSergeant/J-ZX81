@@ -11,8 +11,26 @@ NB switching the emulation speed to "Full" no longer works properly, but everyth
    fine at normal speed.  My PC is obviously now a lot faster than the original dev machine!!!
    I will investigate this and fix at some point.
 
-To run simply download and run the jar file:
+To try simply download and run the [jar](https://github.com/RobinSergeant/J-ZX81/raw/master/bin/J_ZX81.jar) file
 
-https://github.com/RobinSergeant/J-ZX81/raw/master/bin/J_ZX81.jar
+## Quick start instructions
+
+Those not familiar with the ZX81 keyboard will probably find the layout very confusing at first. Selecting
+'Keyboard Layout' from the help menu will display a scanned image of the original keyboard.
 
 ![Alt text](/data/zx81keyb.jpg?raw=true)
+
+The emulator maps your keyboard to this layout, except for the following exceptions/additions:
+
+- Shift maps to Shift.
+- Enter maps to NewLine.
+- The BackSpace key can be used in place of Shift+0 (Rubout).
+- The SpaceBar maps to the Space key and can be used in place of the key next to M.
+- The cursor keys can be used in place of the 5, 6, 7, and 8 keys.
+
+## Playing games!
+
+- Download your favourite games in standard .p file format.
+- Set the tape file directory (under the Settings menu) by selecting any file in the directory.
+- Load using the Sinclair BASIC load command, e.g. to load the game "3D Monster Maze" which can be found on the
+internet as the file "3dmaze.p" you would need to enter LOAD "3DMAZE" (J, Shift+P etc.).
