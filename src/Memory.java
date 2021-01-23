@@ -1,6 +1,7 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 // Memory.java
 
-/* this class represents the ZX81 Memory and implements the CPU MemoryInterface */   
+/* this class represents the ZX81 Memory and implements the CPU MemoryInterface */
 
 
 import Z80.*;
@@ -48,6 +49,6 @@ public final class Memory implements MemoryInterface {
     public void clear() {
         for (int c=rom_top; c<ram_top; c++) {
             data[c] = 0;
-        } 
+        }
     }
 }

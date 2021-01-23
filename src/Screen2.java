@@ -1,6 +1,7 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 // Screen2.java
 
-/* this class represents the ZX81 video display, providing a screen component and refresh thread */   
+/* this class represents the ZX81 video display, providing a screen component and refresh thread */
 
 
 import java.awt.*;
@@ -51,7 +52,7 @@ public final class Screen2 extends Canvas implements Runnable, MouseListener {
         }
     }
 
-    public void update(Graphics g) { 
+    public void update(Graphics g) {
         if (display == null) {
             display = createImage(256, 192);
             context = display.getGraphics();
@@ -70,7 +71,7 @@ public final class Screen2 extends Canvas implements Runnable, MouseListener {
         boolean inv;
         Graphics gt;
         while ((y < 192) && (x < 257)) {
-            ch = ram.readByte(dfile) & 0xFF;    // get next character 
+            ch = ram.readByte(dfile) & 0xFF;    // get next character
             dfile++;
             if (ch == 118) {    // new line
                 x = -8;

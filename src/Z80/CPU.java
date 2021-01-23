@@ -1,3 +1,4 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 // CPU.java
 
 /* this file contains all the major CPU classes and all the Z80 instruction classes */

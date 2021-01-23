@@ -1,6 +1,7 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 // CPU.java
 
-/* main Instruction class, new Z80 instruction classes must sub class this and override the execute method */   
+/* main Instruction class, new Z80 instruction classes must sub class this and override the execute method */
 
 
 package Z80;

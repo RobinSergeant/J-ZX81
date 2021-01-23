@@ -1,6 +1,6 @@
-// CPU.java
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 
-/* Memory interface which all Z80 memory classes must implement s*/  
+/* Memory interface which all Z80 memory classes must implement s*/
 
 package Z80;
 

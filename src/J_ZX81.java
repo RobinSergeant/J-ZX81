@@ -1,3 +1,4 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 // J_ZX81.java
 
 /* this is the main class for the emulator.  It loads and pathes the ROM, generates the user interface, and creates all the main objects */
@@ -167,8 +168,8 @@ implements ActionListener, ItemListener, WindowListener {
         } else if (choice.equals("Reset")) {
             cpu.NMI();  // generate NMI to reset ZX81
         } else if (choice.equals("About")) {
-            MsgDialog m = new MsgDialog(this, "J-ZX81 version 0.5(beta)",
-                "Copyright (c) 1998-1999 Robin Sergeant", "About");
+            MsgDialog m = new MsgDialog(this, "J-ZX81 version 0.6(beta)",
+                "Copyright (c) 1998-2021 Robin Sergeant", "About");
             m.show();
         } else if (choice.equals("Tape file directory")) {
             // create file dialog box

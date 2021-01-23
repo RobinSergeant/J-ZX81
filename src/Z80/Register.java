@@ -1,3 +1,5 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
+
 package Z80;
 
 final class Register {

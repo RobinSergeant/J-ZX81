@@ -1,6 +1,7 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 // OutPort.java
 
-/* Output port interface which classes wishing to act as CPU output ports must implement */  
+/* Output port interface which classes wishing to act as CPU output ports must implement */
 
 package Z80;
 

@@ -1,6 +1,7 @@
+// Copyright 1998-2021 by Robin Sergeant. See license.txt distributed with this file.
 // Keyboard.java
 
-/* this class represents the ZX81 keybaord, acting as a keyboard event handler and CPU input port */   
+/* this class represents the ZX81 keybaord, acting as a keyboard event handler and CPU input port */
 
 import java.awt.event.*;
 import java.util.*;
@@ -78,7 +79,7 @@ public final class Keyboard extends KeyAdapter implements InputPort {
                 current_key = (short)(current_key & 0xFEFF);
             }
             ram.writeWord(16421, current_key);
-        } 
+        }
     }
     public void keyReleased(KeyEvent e) {
         Key key = (Key)keys.get(new Integer(e.getKeyCode()));
@@ -112,7 +113,7 @@ final class Key {
         this.line = line;
         this.value = (byte)value;
         this.shift = shift;
-        code = (short)((value << 9) | 0x100 | ((int)Math.pow(2, line) ^ 0xFF)); 
+        code = (short)((value << 9) | 0x100 | ((int)Math.pow(2, line) ^ 0xFF));
     }
     public Key(int line, int value) {
         this(line, value, false);
