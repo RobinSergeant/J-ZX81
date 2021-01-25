@@ -168,7 +168,7 @@ implements ActionListener, ItemListener, WindowListener {
         } else if (choice.equals("Reset")) {
             cpu.NMI();  // generate NMI to reset ZX81
         } else if (choice.equals("About")) {
-            MsgDialog m = new MsgDialog(this, "J-ZX81 version 0.6(beta)",
+            MsgDialog m = new MsgDialog(this, "J-ZX81 version 0.7(beta)",
                 "Copyright (c) 1998-2021 Robin Sergeant", "About");
             m.show();
         } else if (choice.equals("Tape file directory")) {

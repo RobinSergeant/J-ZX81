@@ -7,11 +7,7 @@ Now available again with source code, and patched to compile and run with the la
 of Java (SE 15).  I had to make a few classes public as calling methods in non public classes via
 a public reference is no longer allowed, but surprisingly no other code changes were required.
 
-NB switching the emulation speed to "Full" no longer works properly, but everything is still
-   fine at normal speed.  My PC is obviously now a lot faster than the original dev machine!!!
-   I will investigate this and fix at some point.
-
-To try simply download and run the [jar](https://github.com/RobinSergeant/J-ZX81/raw/master/bin/J_ZX81.jar) file
+To try simply download and run the [jar](https://github.com/RobinSergeant/J-ZX81/releases/latest/download/J_ZX81.jar) file
 
 ## Quick start instructions
 
