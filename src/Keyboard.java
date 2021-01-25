@@ -11,7 +11,7 @@ public final class Keyboard extends KeyAdapter implements InputPort {
     private Memory ram;
     private byte[] line = new byte[8];
     private Hashtable keys = new Hashtable();
-    public short current_key;
+    private short current_key;
 
     public Keyboard(Memory ram) {
         keys.put(new Integer(KeyEvent.VK_BACK_SLASH), new Key(0, 126));
@@ -69,7 +69,12 @@ public final class Keyboard extends KeyAdapter implements InputPort {
         current_key = (short)0xFFFF;
         this.ram = ram;
     }
-    public void keyPressed(KeyEvent e) {
+
+    public synchronized short getCurrentKey() {
+        return current_key;
+    }
+
+    public synchronized void keyPressed(KeyEvent e) {
         Key key = (Key)keys.get(new Integer(e.getKeyCode()));
         if (key != null) {
             line[key.line] = key.value;
@@ -81,7 +86,8 @@ public final class Keyboard extends KeyAdapter implements InputPort {
             ram.writeWord(16421, current_key);
         }
     }
-    public void keyReleased(KeyEvent e) {
+
+    public synchronized void keyReleased(KeyEvent e) {
         Key key = (Key)keys.get(new Integer(e.getKeyCode()));
         if (key != null) {
             line[key.line] = 127;
@@ -90,7 +96,8 @@ public final class Keyboard extends KeyAdapter implements InputPort {
             ram.writeWord(16421, current_key);
         }
     }
-    public byte readPort(byte low, byte high) {
+
+    public synchronized byte readPort(byte low, byte high) {
         byte res = 127;
         byte mask = 1;
         for (int c=0; c<8; c++) {

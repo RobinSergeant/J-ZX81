@@ -268,7 +268,7 @@ final class Read_Key extends Instruction {
     }
 
     public int execute() {
-        int current = keyb.current_key & 0xFFFF;
+        int current = keyb.getCurrentKey() & 0xFFFF;
         cpu.HL.set((short)current);
         cpu.Z_flag.set((current == last) || (current == 0xFFFF));
         last = current;
@@ -293,7 +293,7 @@ final class Pause extends Instruction {
         boolean key_pressed = false;
         long time;
         do {
-            if (keyb.current_key != (short)0xFFFF) {
+            if (keyb.getCurrentKey() != (short)0xFFFF) {
                 key_pressed = true;
             }
             time = System.currentTimeMillis();

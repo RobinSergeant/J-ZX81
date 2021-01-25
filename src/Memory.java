@@ -19,7 +19,7 @@ public final class Memory implements MemoryInterface {
         data = new byte[ram_top];
     }
 
-    public byte readByte(int pos) {
+    public synchronized byte readByte(int pos) {
         pos = pos & 0xFFFF;     // make sure 'pos' is a 16 bit +ve index
         if (pos >= ram_top) {
             pos = rom_top + pos % ram_size;
@@ -27,11 +27,11 @@ public final class Memory implements MemoryInterface {
         return data[pos];
     }
 
-    public short readWord(int pos) {
+    public synchronized short readWord(int pos) {
         return (short)((readByte(pos+1) << 8) | (readByte(pos) & 0xFF));
     }
 
-    public void writeByte(int pos, byte b) {
+    public synchronized void writeByte(int pos, byte b) {
         pos = pos & 0xFFFF;     // make sure 'pos' is a 16 bit +ve index
         if (pos >= ram_top) {
             pos = rom_top + pos % ram_size;
@@ -41,12 +41,12 @@ public final class Memory implements MemoryInterface {
         }
     }
 
-    public void writeWord(int pos, short w) {
+    public synchronized void writeWord(int pos, short w) {
         writeByte(pos, (byte)w);
         writeByte(pos+1, (byte)(w >>> 8));
     }
 
-    public void clear() {
+    public synchronized void clear() {
         for (int c=rom_top; c<ram_top; c++) {
             data[c] = 0;
         }

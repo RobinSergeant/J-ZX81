@@ -887,12 +887,12 @@ public final class CPU extends Thread {
         timer = System.currentTimeMillis();
     }
 
-    public void setTurbo(boolean val) {
+    public synchronized void setTurbo(boolean val) {
         check_speed = !val;
         this.resetTimer();
     }
 
-    public void setSpeed(float speed) {
+    public synchronized void setSpeed(float speed) {
         tstates_ms = (int)(speed * 1000);
         this.resetTimer();
     }
@@ -936,15 +936,17 @@ public final class CPU extends Thread {
         this.resetTimer();
         while (true) {
             if (tstates >= tstates_ms) {
-                tstates = 0;
-                timer++;
+                synchronized(this) {
+                    tstates = 0;
+                    timer++;
+                }
                 if (interrupt) {
                     PC = 0x66;
                     interrupt = false;
                 }
                 if (check_speed) {
                     try {
-                        Thread.sleep(Math.max(0, timer -                             System.currentTimeMillis()));
+                        Thread.sleep(Math.max(0, timer - System.currentTimeMillis()));
                     } catch (InterruptedException e) {}
                 }
             }
