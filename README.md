@@ -11,8 +11,8 @@ To try simply download and run the [jar](https://github.com/RobinSergeant/J-ZX81
 
 ## Windows 10 display fix
 
-If the display looks wrong (font not scaled properly) find the Java exectutable (e.g. C:\Program Files\Java\jdk-15.0.2\bin) and
-set "High DPI scaling override" to "System" (right click exe, select Properties, then select "Change high dpi settings" from the
+If the display looks wrong (font not scaled properly) find the Java exectutable (e.g. C:\Program Files\Java\jdk-15.0.2\bin\java.exe) 
+and set "High DPI scaling override" to "System" (right click exe, select Properties, then select "Change high dpi settings" from the
 Compatibility tab).  Now restart the emulator from the command line:
 
     java -jar J_ZX81.jar
